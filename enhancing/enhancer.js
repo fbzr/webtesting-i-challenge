@@ -40,5 +40,15 @@ function repair(item) {
 }
 
 function get(item) {
-  return { ...item };
+  const { name, enhancement, durability } = item;
+
+  let updatedName = name;
+  if (enhancement > 0 ) {
+      updatedName = '[+' + enhancement + '] ' + name;
+  }
+
+  return {
+    ...item,
+    name: updatedName
+  };
 }

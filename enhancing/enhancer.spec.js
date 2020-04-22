@@ -43,4 +43,10 @@ describe('enhancer.js', () => {
             expect(enhancer.fail(item).enhancement).toBe(16);
         });
     });
+
+    describe('test get function', () => {
+        it('should modify objects name to [+<enhancement>] + <name> if its enhancement if greater than 0', () => {
+            expect(enhancer.get(item).name).toBe('[+16] test');
+        });
+    });
 });
